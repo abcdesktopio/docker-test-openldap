@@ -1,0 +1,5 @@
+dn: dc=planetexpress,dc=com
+objectClass: top
+objectClass: domain
+description: domain planetexpress
+dc: planetexpress
