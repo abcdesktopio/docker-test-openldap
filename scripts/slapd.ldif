@@ -96,8 +96,10 @@ olcRootPW: secret
 olcDbDirectory:	/var/lib/openldap/openldap-data
 # Indices to maintain
 olcDbIndex: objectClass eq
-olcDbCacheSize: 1000
-olcDbMaxSize: 1073741824
+# olcDbCacheSize: 1000
+# olcDbMaxSize: 1073741824
+olcDbCacheSize: 256
+olcDbMaxSize: 134217728
 olcThreads: 2
 
 dn: olcDatabase=monitor,cn=config
