@@ -87,10 +87,10 @@ done
 
 if [ "$LDAPS" = true ]; then
   echo "Starting LDAPS"
-  slapd -d "$LOG_LEVEL" -h "ldaps:///"
+  slapd -d "$LOG_LEVEL" -h "ldaps:/// ldapi:///"
 else
   echo "Starting LDAP"
-  slapd -d "$LOG_LEVEL" -h "ldap:///"
+  slapd -d "$LOG_LEVEL" -h "ldap:/// ldapi:///"
 fi
 
 # run command passed to docker run
