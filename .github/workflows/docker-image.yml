@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '0 0,12 * * *'
 
 env:
     imagetag: "${{ github.event.client_payload.ref || github.ref_name }}"
