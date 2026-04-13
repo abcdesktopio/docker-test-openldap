@@ -2,6 +2,14 @@
 # docker entrypoint script
 # configures and starts LDAP
 
+
+# Reduce maximum number of number of open file descriptors to 1024
+# otherwise slapd consumes two orders of magnitude more of RAM
+# see https://github.com/docker/docker/issues/8231
+LDAP_NOFILE=1024
+ulimit -n $LDAP_NOFILE
+
+
 # test for ldaps configuration
 LDAPS=true
 if [ -z "$KEY_FILE" ] || [ -z "$CERT_FILE" ] || [ -z "$CA_FILE" ]; then
