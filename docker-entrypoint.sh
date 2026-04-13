@@ -6,7 +6,9 @@
 # Reduce maximum number of number of open file descriptors to 1024
 # otherwise slapd consumes two orders of magnitude more of RAM
 # see https://github.com/docker/docker/issues/8231
-LDAP_NOFILE=1024
+# LDAP_NOFILE=1024
+echo "Reduce maximum number of number of open file descriptors to $LDAP_NOFILE"
+echo "otherwise slapd consumes two orders of magnitude more of RAM"
 ulimit -n $LDAP_NOFILE
 
 
